@@ -1,0 +1,82 @@
+[build-system]
+requires = ["setuptools>=65.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "helix-creative-spirals"
+version = "1.0.0"
+description = "AI-powered social media automation with creative content generation"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "Apache-2.0"}
+authors = [
+    {name = "Helix Team", email = "team@helix.dev"}
+]
+keywords = [
+    "ai",
+    "automation",
+    "content-generation",
+    "social-media",
+    "creative",
+    "spirals",
+    "narrative-engine"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Internet",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "helix-narrative-engine>=1.0.0",
+    "helix-spirals>=1.0.0",
+    "croniter>=1.3.0",
+    "aiohttp>=3.8.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-cov>=4.0",
+    "black>=23.0",
+    "isort>=5.0",
+    "flake8>=6.0",
+    "mypy>=1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/Deathcharge/helix-creative-spirals"
+Documentation = "https://github.com/Deathcharge/helix-creative-spirals#readme"
+Repository = "https://github.com/Deathcharge/helix-creative-spirals.git"
+Issues = "https://github.com/Deathcharge/helix-creative-spirals/issues"
+
+[tool.setuptools]
+packages = ["helix_creative_spirals"]
+
+[tool.black]
+line-length = 100
+target-version = ["py38", "py39", "py310", "py311"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
