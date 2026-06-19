@@ -1,127 +1,93 @@
-# Helix Creative Spirals
+# helix-creative-spirals
 
-**AI-powered social media automation with creative content generation**
+Creative spiral patterns and animations
 
-Combines [Helix Narrative Engine](https://github.com/Deathcharge/helix-narrative-engine) with [Helix Spirals](https://github.com/Deathcharge/helix-spirals) to automate creative content generation and distribution across social media platforms.
+## 🎯 Overview
 
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+This repository is part of the [Helix Collective](https://github.com/Deathcharge/helix-platform), a comprehensive ecosystem for building intelligent, multi-agent systems with consciousness frameworks and advanced LLM integration.
 
----
-
-## Features
-
-- **Automated Content Generation**: Generate stories, articles, and creative content on-demand
-- **Multi-Platform Distribution**: Publish to Twitter, LinkedIn, Discord, Slack, and more
-- **Scheduled Workflows**: Run content generation and distribution on a schedule
-- **Social Media Integration**: 130+ pre-built connectors via Helix Spirals
-- **Quality Control**: Built-in quality assessment and ethical compliance
-- **Analytics**: Track engagement and performance metrics
-
----
-
-## Quick Start
+## 🚀 Quick Start
 
 ### Installation
 
-```bash
+\`\`\`bash
 git clone https://github.com/Deathcharge/helix-creative-spirals.git
 cd helix-creative-spirals
-pip install -e .
-```
+pip install -r requirements.txt
+\`\`\`
 
 ### Basic Usage
 
-```python
-from helix_creative_spirals import createContentWorkflow
+See the [examples/](examples/) directory for working examples and integration patterns.
 
-# Create a workflow that generates and publishes content
-workflow = createContentWorkflow({
-    "name": "Daily Story Generator",
-    "trigger": "schedule",
-    "schedule": "0 9 * * *",  # 9 AM daily
-    "steps": [
-        {
-            "type": "generate",
-            "engine": "narrative",
-            "prompt": "A cyberpunk heist story",
-            "preset": "balanced"
-        },
-        {
-            "type": "format",
-            "target": "twitter",
-            "maxLength": 280
-        },
-        {
-            "type": "publish",
-            "platform": "twitter"
-        },
-        {
-            "type": "archive",
-            "platform": "notion"
-        }
-    ]
-})
+## 📚 Documentation
 
-await workflow.execute()
-```
+- **[Architecture](docs/ARCHITECTURE.md)** - System design and components
+- **[API Reference](docs/API.md)** - Complete API documentation
+- **[Integration Guide](docs/INTEGRATION.md)** - How to integrate with other Helix repos
+- **[Deployment](docs/DEPLOYMENT.md)** - Production deployment guide
+- **[Contributing](CONTRIBUTING.md)** - How to contribute
 
----
+## 🔗 Related Repositories
 
-## Workflow Templates
+- **[helix-platform](https://github.com/Deathcharge/helix-platform)** - Central hub and integration guide
+- **[helix-unified](https://github.com/Deathcharge/helix-unified)** - Main unified codebase
+- **[helix-core](https://github.com/Deathcharge/helix-core)** - Core utilities and LLM integration
 
-### 1. Twitter Story Generator
-Generates short stories optimized for Twitter threads.
+See [HELIX_REPOSITORY_INDEX.md](https://github.com/Deathcharge/helix-platform/blob/main/HELIX_REPOSITORY_INDEX.md) for the complete ecosystem map.
 
-### 2. LinkedIn Content Scheduler
-Generates professional insights and publishes to LinkedIn.
+## 🧪 Testing
 
-### 3. Multi-Platform Distributor
-Generates once, distributes to multiple platforms with format adaptation.
+Run tests with pytest:
 
-### 4. Engagement Monitor
-Generates content and tracks engagement metrics.
+\`\`\`bash
+pytest tests/ -v --cov=src
+\`\`\`
 
----
+## 🔄 CI/CD
 
-## Architecture
+This repository uses GitHub Actions for:
+- ✅ Automated testing (Python 3.9, 3.10, 3.11)
+- ✅ Code linting (flake8)
+- ✅ Type checking (mypy)
+- ✅ Security scanning (bandit, safety)
+- ✅ Coverage reporting (Codecov)
 
-### Workflow Pipeline
+See [.github/workflows/ci.yml](.github/workflows/ci.yml) for details.
 
-1. **Generation** - Helix Narrative Engine creates content
-2. **Formatting** - Adapt content for target platform
-3. **Publishing** - Distribute via Helix Spirals connectors
-4. **Archiving** - Store in Notion/database for reference
-5. **Analytics** - Track engagement and performance
+## 📋 Requirements
 
----
+- Python 3.9+
+- Dependencies listed in requirements.txt
+- Development dependencies in requirements-dev.txt
 
-## Environment Variables
+## 🤝 Contributing
 
-```bash
-# Narrative Engine
-export OPENAI_API_KEY="sk-..."
-export ANTHROPIC_API_KEY="sk-ant-..."
-export GEMINI_API_KEY="AIza..."
+We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for:
+- Development setup
+- Code style guide
+- Testing requirements
+- Pull request process
 
-# Spirals Integrations
-export TWITTER_API_KEY="..."
-export LINKEDIN_ACCESS_TOKEN="..."
-export DISCORD_WEBHOOK_URL="..."
-export NOTION_API_KEY="..."
-```
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🆘 Support
+
+- **Issues**: Report bugs or request features via [GitHub Issues](https://github.com/Deathcharge/helix-creative-spirals/issues)
+- **Discussions**: Ask questions in [GitHub Discussions](https://github.com/Deathcharge/helix-creative-spirals/discussions)
+- **Documentation**: See the [docs/](docs/) directory
+- **Ecosystem**: Visit [helix-platform](https://github.com/Deathcharge/helix-platform)
+
+## 🎓 Learn More
+
+- [Helix Collective Repository Index](https://github.com/Deathcharge/helix-platform/blob/main/HELIX_REPOSITORY_INDEX.md)
+- [Architecture Guide](https://github.com/Deathcharge/helix-platform/blob/main/docs/ARCHITECTURE.md)
+- [Integration Examples](https://github.com/Deathcharge/helix-platform/tree/main/examples)
 
 ---
 
-## Related Projects
-
-- [Helix Narrative Engine](https://github.com/Deathcharge/helix-narrative-engine) - Creative content generation
-- [Helix Spirals](https://github.com/Deathcharge/helix-spirals) - Workflow automation
-- [Helix Orchestration](https://github.com/Deathcharge/helix-orchestration) - Multi-agent coordination
-- [Helix Ethics](https://github.com/Deathcharge/helix-ethics) - Ethical AI governance
-
----
-
-**License:** Apache 2.0
-
-**Built with ❤️ by the Helix Team**
+**Status**: ✅ Production Ready  
+**Last Updated**: June 19, 2026  
+**Maintainer**: Helix Collective Contributors
